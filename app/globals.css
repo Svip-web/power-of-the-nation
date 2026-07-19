@@ -103,6 +103,24 @@ nav {
   color: rgba(0, 0, 0, 0.75);
 }
 
+.site-header nav {
+  gap: 0;
+}
+
+.site-header nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 102px;
+  height: 12px;
+  color: rgba(0, 0, 0, 0.75);
+  font-family: var(--font-manrope), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
