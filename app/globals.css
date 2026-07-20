@@ -595,6 +595,7 @@ h2 {
 }
 
 .direction-grid {
+  --slide-x: 0px;
   display: grid;
   grid-template-columns: repeat(6, 410px);
   grid-template-rows: repeat(2, 360px);
@@ -602,6 +603,7 @@ h2 {
   width: 2585px;
   height: 745px;
   overflow: visible;
+  transform: translate3d(var(--slide-x), 0, 0);
   transition: transform 380ms ease;
   will-change: transform;
 }
@@ -1230,9 +1232,11 @@ h2 {
 }
 
 .project-card-row {
+  --slide-x: 0px;
   display: flex;
   gap: 10px;
   width: max-content;
+  transform: translate3d(var(--slide-x), 0, 0);
   transition: transform 380ms ease;
   will-change: transform;
 }

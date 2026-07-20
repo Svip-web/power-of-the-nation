@@ -420,7 +420,7 @@ export default function Home() {
           <div
             aria-label="Ключові напрямки діяльності"
             className="direction-grid"
-            style={{ transform: `translateX(-${directionPage * 1305}px)` }}
+            style={{ "--slide-x": `-${directionPage * 1305}px` } as React.CSSProperties}
           >
             {directions.map((direction, index) => (
               <article
@@ -542,7 +542,7 @@ export default function Home() {
           </div>
         </div>
         <div className="project-slider">
-          <div className="project-card-row" style={{ transform: `translateX(-${projectPage * 670}px)` }}>
+          <div className="project-card-row" style={{ "--slide-x": `-${projectPage * 670}px` } as React.CSSProperties}>
             {projectCards.map((project, index) => (
               <article
                 aria-pressed={openProject === index}
