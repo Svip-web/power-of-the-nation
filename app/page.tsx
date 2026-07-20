@@ -205,9 +205,19 @@ function AnimatedStat({ value }: { value: string }) {
     }
 
     let frame = 0;
+    let fallback = 0;
     let started = false;
     let startTime = 0;
     const duration = 1400;
+
+    const start = () => {
+      if (started) {
+        return;
+      }
+
+      started = true;
+      frame = requestAnimationFrame(run);
+    };
 
     const run = (time: number) => {
       if (!startTime) {
@@ -225,21 +235,35 @@ function AnimatedStat({ value }: { value: string }) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          started = true;
-          frame = requestAnimationFrame(run);
+        if (entry.isIntersecting) {
+          start();
           observer.disconnect();
         }
       },
-      { threshold: 0.35 },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.15 },
     );
 
     if (ref.current) {
       observer.observe(ref.current);
+
+      const rect = ref.current.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        start();
+        observer.disconnect();
+      }
     }
+
+    fallback = window.setTimeout(() => {
+      if (!started) {
+        setDisplayValue(format(target));
+        observer.disconnect();
+      }
+    }, duration + 600);
 
     return () => {
       observer.disconnect();
+      window.clearTimeout(fallback);
       cancelAnimationFrame(frame);
     };
   }, [value]);
