@@ -80,7 +80,8 @@ textarea {
 }
 
 main {
-  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .reveal-on-scroll {
