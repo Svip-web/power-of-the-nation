@@ -53,6 +53,7 @@
 html {
   min-height: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: 165px;
 }
 
 body {
@@ -109,6 +110,11 @@ main {
   width: min(1280px, calc(100vw - 40px));
   margin: 0 auto;
   padding: 80px 0;
+  scroll-margin-top: 165px;
+}
+
+#home {
+  scroll-margin-top: 0;
 }
 
 .site-header {
