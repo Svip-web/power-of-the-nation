@@ -42,3 +42,4 @@ next-env.d.ts
 /work/
 /.sites-package/
 /.sites-stage/
+/.sites-stage-*/
