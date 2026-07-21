@@ -295,6 +295,7 @@ export default function Home() {
   const [activeProject, setActiveProject] = useState(0);
   const [openProject, setOpenProject] = useState<number | null>(null);
   const [isHeaderCompact, setIsHeaderCompact] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const currentProject = projectCards[activeProject];
 
   useEffect(() => {
@@ -352,14 +353,25 @@ export default function Home() {
         <a className="brand" href="#home" aria-label="Power of the Nation">
           <img src="/logo.png" alt="Power of the Nation Humanitarian Alliance" />
         </a>
-        <nav aria-label="Основна навігація">
-          <a href="#home">Головна</a>
-          <a href="#directions">Напрямки</a>
-          <a href="#founders">Засновники</a>
-          <a href="#projects">Проєкти</a>
-          <a href="#contacts">Контакти</a>
+        <nav className={isMobileMenuOpen ? "is-open" : ""} aria-label="Основна навігація">
+          <a href="#home" onClick={() => setIsMobileMenuOpen(false)}>Головна</a>
+          <a href="#directions" onClick={() => setIsMobileMenuOpen(false)}>Напрямки</a>
+          <a href="#founders" onClick={() => setIsMobileMenuOpen(false)}>Засновники</a>
+          <a href="#projects" onClick={() => setIsMobileMenuOpen(false)}>Проєкти</a>
+          <a href="#contacts" onClick={() => setIsMobileMenuOpen(false)}>Контакти</a>
         </nav>
         <a className="button primary compact" href="#support">Підтримати</a>
+        <button
+          className="mobile-menu-toggle"
+          type="button"
+          aria-label="Відкрити меню"
+          aria-expanded={isMobileMenuOpen}
+          onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
         <button className="language" type="button">UA</button>
       </header>
 
