@@ -34,6 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
+      <head>
+        <link rel="preload" as="image" href="/hero-shield-mobile.webp" type="image/webp" media="(max-width: 720px)" />
+        <link rel="preload" as="image" href="/hero-shield.webp" type="image/webp" media="(min-width: 721px)" />
+      </head>
       <body className={`${inter.variable} ${manrope.variable}`}>{children}</body>
     </html>
   );
