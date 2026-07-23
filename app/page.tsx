@@ -96,47 +96,47 @@ const siteCopy = {
     join: "Join",
     hero: {
       eyebrow: "Power of nations. Humanitarian alliance",
-      title: "Power of the Nation — Humanitarian Alliance",
-      lead: "A civic union created to deliver socially valuable initiatives, support communities, and strengthen civil society",
+      title: "Power of the Nation - Humanitarian Alliance",
+      lead: "A non-governmental alliance dedicated to implementing high-impact social initiatives, supporting communities, and fostering civil society development.",
     },
     directions: {
       eyebrow: "Areas",
-      title: "Key Areas of Activity",
+      title: "Core Focus Areas",
     },
     founders: {
       eyebrow: "Our founders",
-      title: "United by a common purpose - to serve people and Ukraine",
-      lead: "Three organizations joined forces to build a strong humanitarian platform",
+      title: "United by a common goal: to serve the people and Ukraine.",
+      lead: "Three organizations have joined forces to create a powerful, coordinated humanitarian platform.",
     },
     projects: {
       eyebrow: "Our projects",
       title: "Projects That Change Lives",
-      lead: "We implement initiatives focused on supporting the military, helping people affected by the war, and building a modern rehabilitation system.",
-      leadSecond: "Every project is a contribution to a stronger future for Ukraine",
-      supportTitle: "Support for AFU units",
-      medevacTitle: "Project MEDEVAC: Road of Life",
-      medevacText: "We do more than transport the wounded - we fight for life against death. Volunteer crews travel hundreds of kilometers every day under shelling and drone threats to deliver Ukrainian defenders from stabilization points to hospitals.",
-      medevacTextSecond: "No administrative costs - 100% of donations go to fuel and mission support",
-      donationTitle: "Every donation is someone's chance to return home",
+      lead: "We implement initiatives aimed at supporting the military, aiding those affected by the war, and creating a modern rehabilitation system.",
+      leadSecond: "Every project is a contribution to a stronger future for Ukraine.",
+      supportTitle: "Support for the Armed Forces of Ukraine",
+      medevacTitle: "Project MEDEVAC: The Road of Life",
+      medevacText: "We don't just transport the wounded; we reclaim lives from the brink of death. Every day, volunteer crews cover hundreds of kilometers under the constant threat of shelling and drone attacks to safely transport Ukrainian defenders from frontline stabilization points to hospitals.",
+      medevacTextSecond: "Zero administrative costs: 100% of your donations go directly to fuel and mission support.",
+      donationTitle: "Every donation is someone's chance to return home.",
       rehabTitle: "Building a Network of Rehabilitation Centers",
-      rehabText: "We are creating a modern network of rehabilitation centers to provide comprehensive physical, psychological, and social recovery for military personnel and civilians",
+      rehabText: "We are establishing a modern network of rehabilitation centers to provide comprehensive physical, psychological, and social recovery for both military personnel and civilians.",
     },
     contacts: {
       eyebrow: "Contacts and support",
-      title: "Contact us or choose a way to support our work",
-      lead: "We are open to cooperation, partnerships, and new initiatives. Together we do more for people and the future of Ukraine.",
+      title: "Contact us or choose a way to support our joint mission.",
+      lead: "We welcome strategic cooperation, institutional partnerships, and joint initiatives. Together, we can achieve a greater impact for the people and the future of Ukraine.",
       helpTitle: "How You Can Help",
-      infoTitle: "Join the creation of meaningful change",
-      contactInfo: "Contact information",
+      infoTitle: "Join us in making a meaningful impact.",
+      contactInfo: "Contact Information",
       phone: "Phone",
-      social: "We are on social media",
-      formTitle: "Send a message",
-      name: "Your name",
-      email: "Your email",
-      topic: "Message subject",
-      message: "Your message",
-      consent: "I agree to the processing of personal data and consent to feedback regarding my request",
-      submit: "Send message",
+      social: "Social Media",
+      formTitle: "Send a Message",
+      name: "Your Name",
+      email: "Your Email",
+      topic: "Subject",
+      message: "Your Message",
+      consent: "I consent to the processing of my personal data and agree to be contacted regarding my inquiry in accordance with the Privacy Policy.",
+      submit: "Send a Message",
     },
     footer: {
       rights: "© 2025 Power of the Nation Humanitarian Alliance. All rights reserved.",
@@ -164,7 +164,7 @@ const siteCopy = {
 const directions = [
   "Психологічна підтримка",
   "Освітня діяльність",
-  "Адвокатська та правова діяльність",
+  "Адвокатська діяльність",
   "Соціальна діяльність",
   "Соціальне підприємство",
   "Будівництво та технічні роботи",
@@ -191,6 +191,21 @@ const directionIcons = [
   "/direction-icons/12.png",
 ];
 
+const directionIconsEn = [
+  "/direction-icons/01.png",
+  "/direction-icons/02.png",
+  "/direction-icons/03.png",
+  "/direction-icons/04.png",
+  "/direction-icons/05.png",
+  "/direction-icons/06.png",
+  "/direction-icons/07.png",
+  "/direction-icons/12.png",
+  "/direction-icons/08.png",
+  "/direction-icons/09.png",
+  "/direction-icons/10.png",
+  "/direction-icons/11.png",
+];
+
 const directionDetails = [
   "Надання психологічної допомоги, кризова підтримка, групи взаємодопомоги, психоосвітня діяльність",
   "Розробка освітніх програм, семінари та тренінги, інформаційно-просвітницька робота",
@@ -203,23 +218,23 @@ const directionDetails = [
   "Міжнародне партнерство, залучення фінансування, обмін досвідом",
   "Сприяння медичній допомозі, реабілітація, психосоціальна підтримка",
   "Управління ресурсами, інвестиційна діяльність, донорські програми",
-  "Буде текст",
+  "Створення меморіалів на честь полеглих іноземних добровольців, реалізація меморіальних ініціатив, а також сприяння міжнародній солідарності та молодіжній освіті",
 ];
 
 const founders = [
   {
     country: "Латвія",
-    title: "ГО «Шлях Пам'яті»",
+    title: "Ganta Fonds",
     text: "Латвійський благодійний фонд, що створює національні та міжнародні гуманітарні проєкти. Спеціалізується на мобільній медичній допомозі, евакуації поранених та підтримці українських медиків і військових.",
   },
   {
     country: "Україна - США",
     title: "ГО «Шлях Пам'яті»",
-    text: "Українсько-американська громадська організація, що створює меморіали іноземним добровольцям, які загинули захищаючи Україну. Реалізує проєкти вшанування пам'яті, розвитку територій, міжнародної солідарності та освіти молоді.",
+    text: "Українсько-американська громадська організація, що створює меморіали іноземним добровольцям, які загинули захищаючи Україну. Реалізує проєкти вшанування пам’яті, розвитку територій, міжнародної солідарності та освіти молоді.",
   },
   {
     country: "Україна",
-    title: "БФ «Сила націй»",
+    title: "БО “Волонтери Болехівщини”",
     text: "Благодійна організація з Івано-Франківської області, що надає соціальну та гуманітарну допомогу населенню. Активно підтримує військових, займається волонтерською діяльністю та соціальними проєктами.",
   },
 ];
@@ -276,28 +291,28 @@ const projectCards = [
     icon: "/project-icons/01.png",
     detailTitle: "Допомога підрозділам ЗСУ",
     detailText: "Забезпечуємо українських захисників необхідним обладнанням, технікою та засобами для ефективного виконання бойових завдань",
-    openText: "Буде текст",
+    openText: "Закупівля безпілотних літальних апаратів для розвідки та виконання бойових місій",
   },
   {
     title: "Автомобілі",
     icon: "/project-icons/02.png",
     detailTitle: "Допомога підрозділам ЗСУ",
     detailText: "Забезпечуємо українських захисників необхідним обладнанням, технікою та засобами для ефективного виконання бойових завдань",
-    openText: "Буде текст",
+    openText: "Закупівля та передача транспорту для виконання бойових і логістичних завдань",
   },
   {
     title: "Генератори",
     icon: "/project-icons/04.png",
     detailTitle: "Допомога підрозділам ЗСУ",
     detailText: "Забезпечуємо українських захисників необхідним обладнанням, технікою та засобами для ефективного виконання бойових завдань",
-    openText: "Буде текст",
+    openText: "Забезпечення автономним живленням підрозділів у польових умовах",
   },
   {
     title: "Екофлоу",
     icon: "/project-icons/05.png",
     detailTitle: "Допомога підрозділам ЗСУ",
     detailText: "Забезпечуємо українських захисників необхідним обладнанням, технікою та засобами для ефективного виконання бойових завдань",
-    openText: "Буде текст",
+    openText: "Портативні зарядні станції для безперебійного живлення обладнання та засобів зв'язку",
   },
   {
     title: "Спорядження",
@@ -332,40 +347,40 @@ const helpOptions = [
 ];
 
 const directionsEn = [
-  "Psychological support",
-  "Educational activity",
-  "Advocacy and legal activity",
-  "Social activity",
-  "Social entrepreneurship",
-  "Construction and technical works",
-  "Cultural activity",
-  "Environmental activity",
-  "International activity",
-  "Medical and rehabilitation activity",
-  "Property, financial and investment activity",
-  "Memorial and remembrance activity",
+  "Psychological Support",
+  "Educational Initiatives",
+  "Advocacy",
+  "Social Services",
+  "Social Entrepreneurship",
+  "Construction & Infrastructure",
+  "Cultural Initiatives",
+  "Memorialization & Commemoration",
+  "Environmental Protection",
+  "International Cooperation",
+  "Healthcare & Rehabilitation",
+  "Financial & Asset Management",
 ];
 
 const directionDetailsEn = [
-  "Providing psychological assistance, crisis support, mutual aid groups, and psychoeducational outreach",
-  "Development of educational programs, seminars, trainings, and informational outreach",
-  "Legal protection, legal education, and representation of interests",
-  "Social support, protection of rights, social adaptation and reintegration",
-  "Employment support, development of social enterprises, skills training",
-  "Restoration of facilities, repair works, technical maintenance of infrastructure",
-  "Preservation of cultural heritage, event organization, intercultural dialogue",
-  "Environmental protection, environmental education, sustainable use of resources",
-  "International partnerships, fundraising, exchange of experience",
-  "Support for medical assistance, rehabilitation, psychosocial support",
-  "Resource management, investment activity, donor programs",
-  "Text will be added",
+  "Providing psychological assistance, crisis intervention, peer support groups, and psychoeducational outreach.",
+  "Developing educational programs, organizing workshops and training sessions, and conducting informational awareness campaigns.",
+  "Protecting human rights, promoting legal awareness, and advocating for the public interest at the systemic level.",
+  "Providing comprehensive social support, protecting rights, and facilitating social adaptation and reintegration.",
+  "Supporting employment, developing social enterprises, and providing capacity building and skills training.",
+  "Rebuilding facilities, conducting repair works, and maintaining vital civilian infrastructure.",
+  "Preserving cultural heritage, organizing events, and promoting intercultural dialogue.",
+  "Creating memorials to honor fallen foreign volunteers, implementing memorial initiatives, and promoting international solidarity and youth education.",
+  "Promoting environmental conservation, eco-education, and sustainable resource management.",
+  "Fostering international partnerships, fundraising, and facilitating the cross-border exchange of knowledge and expertise.",
+  "Facilitating medical care, physical rehabilitation, and psychosocial support for those affected by the war.",
+  "Coordinating donor programs, ensuring transparent resource management, and overseeing financial management.",
 ];
 
 const statsEn = [
-  ["03", "Partner countries"],
-  ["12", "Areas of activity"],
-  ["1000+", "Citizens reached"],
-  ["24/7", "Humanitarian support"],
+  ["3", "Partner Countries"],
+  ["13", "Focus Areas"],
+  ["1000+", "Beneficiaries Reached"],
+  ["24/7", "Humanitarian Support"],
 ];
 
 const founderCardsEn = [
@@ -374,108 +389,108 @@ const founderCardsEn = [
     icon: "/founder-overlay-1.svg",
     country: "Latvia",
     title: "Ganta Fonds",
-    text: "Latvian charitable foundation creating national and international humanitarian projects. Specializes in mobile medical aid, evacuation of wounded people, and support for Ukrainian medics and military personnel.",
+    text: "A Latvian charitable foundation initiating national and international humanitarian projects. It specializes in mobile medical care, casualty evacuation, and supporting Ukrainian medics and military personnel.",
   },
   {
     align: "center",
     icon: "/founder-overlay-center.svg",
     country: "Ukraine - USA",
-    title: "NGO “Path of Memory”",
-    text: "Ukrainian-American civic organization creating memorials to foreign volunteers who died defending Ukraine. Implements remembrance, territorial development, international solidarity, and youth education projects.",
+    title: "NGO \"Path of Memory\"",
+    text: "A Ukrainian-American non-governmental organization creating memorials to honor foreign volunteers who have fallen in defense of Ukraine. It implements projects focused on memorialization, community development, international solidarity, and youth education.",
   },
   {
     align: "left",
     icon: "/founder-overlay-1.svg",
     country: "Ukraine",
-    title: "CO “Volunteers of Bolekhiv Region”",
-    text: "Charitable organization from Ivano-Frankivsk region providing social and humanitarian assistance to people. Actively supports the military and implements volunteer and social projects.",
+    title: "Charitable Organization \"Volunteers of Bolekhivshchyna\"",
+    text: "A charitable organization based in the Ivano-Frankivsk region, providing targeted social and humanitarian assistance to civilians. It actively supports the military, engages in volunteering, and implements community social projects.",
   },
 ];
 
 const impactEn = [
-  ["4 000+", "lives of service members saved"],
-  ["1 200+", "evacuation trips completed"],
-  ["85%", "of wounded successfully completed rehabilitation"],
-  ["60%", "defenders returned to service"],
-  ["6", "special vehicles in the fleet"],
+  ["4 000+", "lives of military personnel saved"],
+  ["1 200+", "successful evacuation missions completed"],
+  ["85%", "of the wounded have successfully undergone rehabilitation"],
+  ["60%", "defenders have returned to active duty or full civilian life"],
+  ["6", "specialized vehicles in our fleet"],
 ];
 
 const projectCardsEn = [
   {
-    title: "EW systems",
+    title: "Electronic Warfare (EW) Systems",
     icon: "/project-icons/03.png",
-    detailTitle: "Support for AFU units",
-    detailText: "We provide Ukrainian defenders with the equipment, vehicles, and tools they need to perform combat missions effectively",
+    detailTitle: "Support for the Armed Forces of Ukraine",
+    detailText: "We provide Ukrainian defenders with the essential equipment, vehicles, and resources needed to effectively execute their combat missions.",
     openText: "Delivery of modern electronic warfare (EW) systems",
   },
   {
-    title: "Drones",
+    title: "Drones (UAVs)",
     icon: "/project-icons/01.png",
-    detailTitle: "Support for AFU units",
-    detailText: "We provide Ukrainian defenders with the equipment, vehicles, and tools they need to perform combat missions effectively",
+    detailTitle: "Support for the Armed Forces of Ukraine",
+    detailText: "We provide Ukrainian defenders with the essential equipment, vehicles, and resources needed to effectively execute their combat missions.",
     openText: "Text will be added",
   },
   {
     title: "Vehicles",
     icon: "/project-icons/02.png",
-    detailTitle: "Support for AFU units",
-    detailText: "We provide Ukrainian defenders with the equipment, vehicles, and tools they need to perform combat missions effectively",
+    detailTitle: "Support for the Armed Forces of Ukraine",
+    detailText: "We provide Ukrainian defenders with the essential equipment, vehicles, and resources needed to effectively execute their combat missions.",
     openText: "Text will be added",
   },
   {
     title: "Generators",
     icon: "/project-icons/04.png",
-    detailTitle: "Support for AFU units",
-    detailText: "We provide Ukrainian defenders with the equipment, vehicles, and tools they need to perform combat missions effectively",
+    detailTitle: "Support for the Armed Forces of Ukraine",
+    detailText: "We provide Ukrainian defenders with the essential equipment, vehicles, and resources needed to effectively execute their combat missions.",
     openText: "Text will be added",
   },
   {
-    title: "EcoFlow",
+    title: "Portable Power Stations",
     icon: "/project-icons/05.png",
-    detailTitle: "Support for AFU units",
-    detailText: "We provide Ukrainian defenders with the equipment, vehicles, and tools they need to perform combat missions effectively",
+    detailTitle: "Support for the Armed Forces of Ukraine",
+    detailText: "We provide Ukrainian defenders with the essential equipment, vehicles, and resources needed to effectively execute their combat missions.",
     openText: "Text will be added",
   },
   {
-    title: "Equipment",
+    title: "Other Mission-Critical Equipment",
     icon: "/project-icons/06.png",
-    detailTitle: "Support for AFU units",
-    detailText: "We provide Ukrainian defenders with the equipment, vehicles, and tools they need to perform combat missions effectively",
+    detailTitle: "Support for the Armed Forces of Ukraine",
+    detailText: "We provide Ukrainian defenders with the essential equipment, vehicles, and resources needed to effectively execute their combat missions.",
     openText: "Text will be added",
   },
 ];
 
 const rehabServicesEn = [
-  "Rehabilitation center",
-  "Long-term therapy building",
-  "Geriatric center",
-  "Center for military and civilians",
-  "Prosthetics",
-  "Hippotherapy area",
-  "Sensory garden",
-  "Spiritual space - chapel",
+  "Rehabilitation Center",
+  "Long-Term Therapy Facility",
+  "Geriatric Center",
+  "Center for Military & Civilians",
+  "Prosthetics Department",
+  "Equine-Assisted Therapy Area",
+  "Sensory Garden",
+  "Spiritual Care Space (Chapel)",
 ];
 
 const helpOptionsEn = [
   {
     icon: "/help-icons/support.svg",
-    title: "Support",
-    text: "Help with funds for humanitarian programs",
+    title: "Financial Support",
+    text: "Donate to fund our joint humanitarian programs and initiatives.",
   },
   {
     icon: "/help-icons/share.svg",
-    title: "Information support",
-    text: "Share information about our work on social media",
+    title: "Spread the Word",
+    text: "Share information about our alliance and our work on your social media platforms.",
   },
   {
     icon: "/help-icons/partner.svg",
-    title: "Partnership",
-    text: "Become our partner and implement joint projects",
+    title: "Strategic Partnerships",
+    text: "Collaborate with our alliance on joint projects, grant programs, and humanitarian missions.",
   },
   {
     icon: "/help-icons/volunteer.svg",
-    title: "Become a volunteer",
-    text: "Join our team of volunteers and help",
+    title: "Volunteer",
+    text: "Join our international volunteer team and make a hands-on difference.",
   },
 ];
 
@@ -608,6 +623,7 @@ export default function Home() {
   const copy = siteCopy[language];
   const currentDirections = language === "en" ? directionsEn : directions;
   const currentDirectionDetails = language === "en" ? directionDetailsEn : directionDetails;
+  const currentDirectionIcons = language === "en" ? directionIconsEn : directionIcons;
   const currentStats = language === "en" ? statsEn : stats;
   const currentFounderCards = language === "en" ? founderCardsEn : founderCards;
   const currentImpact = language === "en" ? impactEn : impact;
@@ -885,7 +901,7 @@ export default function Home() {
                 ) : (
                   <>
                     <strong>{String(index + 1).padStart(2, "0")}</strong>
-                    <img className="card-icon" src={directionIcons[index]} alt="" aria-hidden="true" />
+                    <img className="card-icon" src={currentDirectionIcons[index]} alt="" aria-hidden="true" />
                     <h3>{direction}</h3>
                     <img className="arrow" src="/arrow-right-circle.svg" alt="" aria-hidden="true" />
                   </>
@@ -1075,12 +1091,18 @@ export default function Home() {
           <div className="rehab-services">
             <ul>
               {currentRehabServices.slice(0, 4).map((service) => (
-                <li key={service}>{service}</li>
+                <li key={service}>
+                  <img className="rehab-service-icon" src="/rehab-service-bullet.svg" alt="" aria-hidden="true" />
+                  <span>{service}</span>
+                </li>
               ))}
             </ul>
             <ul>
               {currentRehabServices.slice(4).map((service) => (
-                <li key={service}>{service}</li>
+                <li key={service}>
+                  <img className="rehab-service-icon" src="/rehab-service-bullet.svg" alt="" aria-hidden="true" />
+                  <span>{service}</span>
+                </li>
               ))}
             </ul>
             <a className="button primary rehab-support" href="#support">{copy.support}</a>
@@ -1100,12 +1122,18 @@ export default function Home() {
         <div className="rehab-panel">
           <ul>
             {currentRehabServices.slice(0, 4).map((service) => (
-              <li key={service}>{service}</li>
+              <li key={service}>
+                <img className="rehab-service-icon" src="/rehab-service-bullet.svg" alt="" aria-hidden="true" />
+                <span>{service}</span>
+              </li>
             ))}
           </ul>
           <ul>
             {currentRehabServices.slice(4).map((service) => (
-              <li key={service}>{service}</li>
+              <li key={service}>
+                <img className="rehab-service-icon" src="/rehab-service-bullet.svg" alt="" aria-hidden="true" />
+                <span>{service}</span>
+              </li>
             ))}
           </ul>
         </div>
