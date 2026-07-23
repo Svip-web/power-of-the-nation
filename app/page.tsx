@@ -821,11 +821,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-mark" aria-hidden="true">
-          <picture>
-            <source media="(max-width: 720px)" srcSet="/hero-shield-mobile.webp" type="image/webp" />
-            <source srcSet="/hero-shield.webp" type="image/webp" />
-            <img src="/hero-shield.png" alt="" width={760} height={755} decoding="async" fetchPriority="high" />
-          </picture>
+          <img src="/hero-shield.png" alt="" width={760} height={755} decoding="async" fetchPriority="high" />
         </div>
       </section>
 
@@ -1087,7 +1083,7 @@ export default function Home() {
             <h2>{copy.projects.rehabTitle}</h2>
           </div>
           <p>{copy.projects.rehabText}</p>
-          <img src="/rehab-building.webp" alt={copy.projects.rehabTitle} decoding="async" loading="lazy" />
+          <img src="/rehab-building.png" alt={copy.projects.rehabTitle} decoding="async" loading="lazy" />
           <div className="rehab-services">
             <ul>
               {currentRehabServices.slice(0, 4).map((service) => (
