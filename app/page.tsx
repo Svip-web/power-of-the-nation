@@ -738,14 +738,19 @@ export default function Home() {
 
     const headerHeight = window.innerWidth <= 720 ? 136 : 140;
     const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-    window.history.pushState(null, "", `#${targetId}`);
+    window.history.replaceState(null, "", `#${targetId}`);
+    window.requestAnimationFrame(() => {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+    });
     window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
   };
 
   return (
     <main>
       <header className={`site-header${isHeaderCompact ? " is-compact" : ""}`}>
-        <a className="brand" href="#home" aria-label="Power of the Nation">
+        <a className="brand" href="#home" onClick={(event) => handleNavClick(event, "home")} aria-label="Power of the Nation">
           <img src={assetPath("/logo.png")} alt="Power of the Nation Humanitarian Alliance" />
         </a>
         <nav className={isMobileMenuOpen ? "is-open" : ""} aria-label={copy.aria.mainNav}>
@@ -755,7 +760,7 @@ export default function Home() {
           <a href="#projects" onClick={(event) => handleNavClick(event, "projects")}>{copy.nav.projects}</a>
           <a href="#contacts" onClick={(event) => handleNavClick(event, "contacts")}>{copy.nav.contacts}</a>
         </nav>
-        <a className="button primary compact" href="#support">{copy.support}</a>
+        <a className="button primary compact" href="#support" onClick={(event) => handleNavClick(event, "support")}>{copy.support}</a>
         <button
           className={`mobile-menu-toggle${isMobileMenuOpen ? " is-open" : ""}`}
           type="button"
@@ -818,8 +823,8 @@ export default function Home() {
           <h1>{copy.hero.title}</h1>
           <p className="lead">{copy.hero.lead}</p>
           <div className="actions">
-            <a className="button primary" href="#support">{copy.support}</a>
-            <a className="button secondary" href="#contacts">
+            <a className="button primary" href="#support" onClick={(event) => handleNavClick(event, "support")}>{copy.support}</a>
+            <a className="button secondary" href="#contacts" onClick={(event) => handleNavClick(event, "contacts")}>
               {copy.partner}
               <img className="button-icon" src={assetPath("/btn-arrow.svg")} alt="" aria-hidden="true" />
             </a>
@@ -934,7 +939,7 @@ export default function Home() {
               <h3>{founder.title}</h3>
               <p className="country">{founder.country}</p>
               <p>{founder.text}</p>
-              <a className="button secondary full" href="#contacts">
+              <a className="button secondary full" href="#contacts" onClick={(event) => handleNavClick(event, "contacts")}>
                 {copy.learnMore}
                 <img className="button-icon" src={assetPath("/btn-arrow.svg")} alt="" aria-hidden="true" />
               </a>
@@ -1079,7 +1084,7 @@ export default function Home() {
           <span aria-hidden="true">✚</span>
           <div>
             <h3>{copy.projects.donationTitle}</h3>
-            <a className="button primary full" href="#contacts">{copy.support}</a>
+            <a className="button primary full" href="#contacts" onClick={(event) => handleNavClick(event, "contacts")}>{copy.support}</a>
           </div>
         </div>
         <div className="rehab-showcase">
@@ -1106,8 +1111,8 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <a className="button primary rehab-support" href="#support">{copy.support}</a>
-            <a className="button secondary rehab-join" href="#contacts">
+            <a className="button primary rehab-support" href="#support" onClick={(event) => handleNavClick(event, "support")}>{copy.support}</a>
+            <a className="button secondary rehab-join" href="#contacts" onClick={(event) => handleNavClick(event, "contacts")}>
               {copy.join}
               <img className="button-icon" src={assetPath("/btn-arrow.svg")} alt="" aria-hidden="true" />
             </a>
@@ -1158,7 +1163,7 @@ export default function Home() {
                   <p>{text}</p>
                   </div>
                 </div>
-                <a className="support-help-button" href="#support">{copy.support}</a>
+                <a className="support-help-button" href="#support" onClick={(event) => handleNavClick(event, "support")}>{copy.support}</a>
               </div>
             </article>
           ))}
@@ -1228,14 +1233,14 @@ export default function Home() {
       <footer className="site-footer-v2">
         <div className="site-footer-v2__inner">
           <div className="site-footer-v2__top">
-            <a className="site-footer-v2__logo" href="#home" aria-label="Power of the Nation">
+            <a className="site-footer-v2__logo" href="#home" onClick={(event) => handleNavClick(event, "home")} aria-label="Power of the Nation">
               <img src={assetPath("/footer-logo.png")} alt="Power of the Nation Humanitarian Alliance" />
             </a>
             <nav className="site-footer-v2__nav" aria-label={copy.aria.footerNav}>
-              <a href="#home">{copy.nav.home}</a>
-              <a href="#directions">{copy.nav.directions}</a>
-              <a href="#founders">{copy.nav.founders}</a>
-              <a href="#contacts">{copy.nav.contacts}</a>
+              <a href="#home" onClick={(event) => handleNavClick(event, "home")}>{copy.nav.home}</a>
+              <a href="#directions" onClick={(event) => handleNavClick(event, "directions")}>{copy.nav.directions}</a>
+              <a href="#founders" onClick={(event) => handleNavClick(event, "founders")}>{copy.nav.founders}</a>
+              <a href="#contacts" onClick={(event) => handleNavClick(event, "contacts")}>{copy.nav.contacts}</a>
             </nav>
           </div>
           <div className="site-footer-v2__divider" aria-hidden="true" />
