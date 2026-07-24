@@ -1,5 +1,8 @@
 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="17" cy="17" r="10" fill="#189E1E" opacity="0.16"/>
-  <circle cx="17" cy="17" r="7" fill="#189E1E" opacity="0.22"/>
-  <circle cx="17" cy="17" r="5.5" fill="#63B860"/>
+  <defs>
+    <filter id="dot-shadow" x="3" y="3" width="28" height="28" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="4.5" flood-color="#189E1E" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <circle cx="17" cy="17" r="5.5" fill="#63B860" filter="url(#dot-shadow)"/>
 </svg>
