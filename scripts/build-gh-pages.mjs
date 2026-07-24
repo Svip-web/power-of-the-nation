@@ -16,12 +16,30 @@ function prefixAbsolutePaths(source) {
 }
 
 function ensureClientEntry(html, entryFile) {
-  const script = `<script type="module" crossorigin src="${basePath}/${entryFile}"></script>`;
-  if (html.includes(script)) {
-    return html;
+  const scriptSrc = `${basePath}/${entryFile}`;
+  const script = `<script type="module" crossorigin src="${scriptSrc}"></script>`;
+  const clientEntryPattern =
+    /<script\s+type=["']module["']\s+crossorigin(?:=["'][^"']*["'])?\s+src=["'](?:\/power-of-the-nation)?\/assets\/index-[^"']+\.js["']><\/script>/g;
+  const nextHtml = html.replace(clientEntryPattern, script);
+
+  if (nextHtml.includes(scriptSrc)) {
+    return nextHtml;
   }
 
-  return html.replace("</body>", `${script}</body>`);
+  return nextHtml.replace("</body>", `${script}</body>`);
+}
+
+function normalizeClientAssets(html, entryFile, cssFile) {
+  const scriptSrc = `${basePath}/${entryFile}`;
+  const cssHref = `${basePath}/${cssFile}`;
+
+  return html
+    .replace(/<link\s+rel=["']modulepreload["'][^>]+>/g, "")
+    .replace(/(?:\/power-of-the-nation)+\/assets\/index-[^"'\\\]]+\.js/g, scriptSrc)
+    .replace(/\/assets\/index-[^"'\\\]]+\.js/g, scriptSrc)
+    .replace(/(?:\/power-of-the-nation)+\/assets\/index-[^"'\\\]]+\.css/g, cssHref)
+    .replace(/\/assets\/index-[^"'\\\]]+\.css/g, cssHref)
+    .replace(/(?:\/power-of-the-nation){2,}/g, basePath);
 }
 
 async function getClientCssFile(outDir) {
@@ -43,7 +61,7 @@ async function getClientCssFile(outDir) {
 function ensureClientCss(html, cssFile) {
   const cssHref = `${basePath}/${cssFile}`;
   return html
-    .replace(/\/power-of-the-nation\/assets\/index-[^"'\\\]]+\.css/g, cssHref)
+    .replace(/(?:\/power-of-the-nation)+\/assets\/index-[^"'\\\]]+\.css/g, cssHref)
     .replace(/\/assets\/index-[^"'\\\]]+\.css/g, cssHref);
 }
 
@@ -93,6 +111,7 @@ let html = await readFile(renderedIndex, "utf8");
 html = prefixAbsolutePaths(html);
 html = ensureClientCss(html, cssFile);
 html = ensureClientEntry(html, entryFile);
+html = normalizeClientAssets(html, entryFile, cssFile);
 assertReady(html);
 
 await writeFile(path.join(outDir, "index.html"), html);
