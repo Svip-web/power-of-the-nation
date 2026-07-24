@@ -613,6 +613,7 @@ h2 {
 
 .directions-controls {
   width: 214px;
+  flex: 0 0 214px;
   height: 72px;
   display: flex;
   align-items: center;
@@ -1285,6 +1286,7 @@ h2 {
 
 .project-controls {
   width: 214px;
+  flex: 0 0 214px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -4640,11 +4642,12 @@ footer p span {
 
   .project-controls {
     position: absolute !important;
-    left: 118px !important;
+    left: 50% !important;
     top: 431px !important;
     width: 114px !important;
     height: 42px !important;
     gap: 30px !important;
+    transform: translateX(-50%) !important;
   }
 
   .impact-grid {

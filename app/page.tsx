@@ -332,13 +332,6 @@ const projectCards = [
     detailText: "Забезпечуємо українських захисників необхідним обладнанням, технікою та засобами для ефективного виконання бойових завдань",
     openText: "Портативні зарядні станції для безперебійного живлення обладнання та засобів зв'язку",
   },
-  {
-    title: "Спорядження",
-    icon: "/project-icons/06.png",
-    detailTitle: "Допомога підрозділам ЗСУ",
-    detailText: "Забезпечуємо українських захисників необхідним обладнанням, технікою та засобами для ефективного виконання бойових завдань",
-    openText: "Буде текст",
-  },
 ];
 
 const helpOptions = [
@@ -465,13 +458,6 @@ const projectCardsEn = [
   {
     title: "Portable Power Stations",
     icon: "/project-icons/05.png",
-    detailTitle: "Support for the Armed Forces of Ukraine",
-    detailText: "We provide Ukrainian defenders with the essential equipment, vehicles, and resources needed to effectively execute their combat missions.",
-    openText: "Text will be added",
-  },
-  {
-    title: "Other Mission-Critical Equipment",
-    icon: "/project-icons/06.png",
     detailTitle: "Support for the Armed Forces of Ukraine",
     detailText: "We provide Ukrainian defenders with the essential equipment, vehicles, and resources needed to effectively execute their combat missions.",
     openText: "Text will be added",
