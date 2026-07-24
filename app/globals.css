@@ -9302,3 +9302,30 @@ footer .brand img {
     text-align: center !important;
   }
 }
+
+@media (max-width: 720px) {
+  .projects-showcase .project-slider {
+    height: auto !important;
+    min-height: 247px !important;
+    overflow: visible !important;
+    padding-bottom: 28px !important;
+  }
+
+  .projects-showcase .project-card-row {
+    height: 247px !important;
+    overflow: visible !important;
+    padding-bottom: 18px !important;
+  }
+
+  .site-footer-v2__made {
+    width: auto !important;
+    min-width: max-content !important;
+    max-width: none !important;
+    white-space: nowrap !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .site-footer-v2__made .site-footer-v2__heart {
+    flex: 0 0 auto !important;
+  }
+}

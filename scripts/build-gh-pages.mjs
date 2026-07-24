@@ -24,6 +24,29 @@ function ensureClientEntry(html, entryFile) {
   return html.replace("</body>", `${script}</body>`);
 }
 
+async function getClientCssFile(outDir) {
+  const assetsDir = path.join(outDir, "assets");
+  const entries = await readdir(assetsDir, { withFileTypes: true });
+  const cssFile = entries
+    .filter((entry) => entry.isFile() && /^index-[\w-]+\.css$/.test(entry.name))
+    .map((entry) => entry.name)
+    .sort()
+    .at(-1);
+
+  if (!cssFile) {
+    throw new Error("Cannot find the compiled client CSS file.");
+  }
+
+  return `assets/${cssFile}`;
+}
+
+function ensureClientCss(html, cssFile) {
+  const cssHref = `${basePath}/${cssFile}`;
+  return html
+    .replace(/\/power-of-the-nation\/assets\/index-[^"'\\\]]+\.css/g, cssHref)
+    .replace(/\/assets\/index-[^"'\\\]]+\.css/g, cssHref);
+}
+
 function assertReady(html) {
   if (!html.includes('<script type="module"')) {
     throw new Error("Generated HTML is missing the client module script.");
@@ -48,6 +71,7 @@ async function prefixCssAssets(outDir) {
 
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 const entryFile = manifest["virtual:vinext-app-browser-entry"]?.file;
+const cssFile = await getClientCssFile(distClient);
 
 if (!entryFile) {
   throw new Error("Cannot find the Vinext browser entry in the Vite manifest.");
@@ -67,6 +91,7 @@ await prefixCssAssets(outDir);
 
 let html = await readFile(renderedIndex, "utf8");
 html = prefixAbsolutePaths(html);
+html = ensureClientCss(html, cssFile);
 html = ensureClientEntry(html, entryFile);
 assertReady(html);
 
