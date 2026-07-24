@@ -4,6 +4,24 @@ import { type MouseEvent, useEffect, useRef, useState } from "react";
 
 type Language = "ua" | "en";
 
+const githubPagesBasePath = "/power-of-the-nation";
+
+function assetPath(path: string) {
+  if (!path.startsWith("/")) {
+    return path;
+  }
+
+  if (typeof window === "undefined") {
+    return path;
+  }
+
+  const isGitHubPagesProject =
+    window.location.pathname === githubPagesBasePath ||
+    window.location.pathname.startsWith(`${githubPagesBasePath}/`);
+
+  return isGitHubPagesProject ? `${githubPagesBasePath}${path}` : path;
+}
+
 const siteCopy = {
   ua: {
     nav: {
@@ -742,7 +760,7 @@ export default function Home() {
     <main>
       <header className={`site-header${isHeaderCompact ? " is-compact" : ""}`}>
         <a className="brand" href="#home" aria-label="Power of the Nation">
-          <img src="/logo.png" alt="Power of the Nation Humanitarian Alliance" />
+          <img src={assetPath("/logo.png")} alt="Power of the Nation Humanitarian Alliance" />
         </a>
         <nav className={isMobileMenuOpen ? "is-open" : ""} aria-label={copy.aria.mainNav}>
           <a href="#home" onClick={(event) => handleNavClick(event, "home")}>{copy.nav.home}</a>
@@ -777,7 +795,7 @@ export default function Home() {
         <div className="mobile-menu-shell">
           <div className="mobile-menu-card">
             <a className="mobile-menu-brand" href="#home" onClick={(event) => handleNavClick(event, "home")} aria-label="Power of the Nation">
-              <img src="/logo.png" alt="Power of the Nation Humanitarian Alliance" />
+              <img src={assetPath("/logo.png")} alt="Power of the Nation Humanitarian Alliance" />
             </a>
             <button
               className="mobile-menu-close"
@@ -816,12 +834,12 @@ export default function Home() {
             <a className="button primary" href="#support">{copy.support}</a>
             <a className="button secondary" href="#contacts">
               {copy.partner}
-              <img className="button-icon" src="/btn-arrow.svg" alt="" aria-hidden="true" />
+              <img className="button-icon" src={assetPath("/btn-arrow.svg")} alt="" aria-hidden="true" />
             </a>
           </div>
         </div>
         <div className="hero-mark" aria-hidden="true">
-          <img src="/hero-shield.png" alt="" width={760} height={755} decoding="async" fetchPriority="high" />
+          <img src={assetPath("/hero-shield.png")} alt="" width={760} height={755} decoding="async" fetchPriority="high" />
         </div>
       </section>
 
@@ -841,7 +859,7 @@ export default function Home() {
             >
               <img
                 className={directionPage === 0 ? "" : "is-flipped"}
-                src={directionPage === 0 ? "/slider-prev.svg" : "/slider-next.svg"}
+                src={assetPath(directionPage === 0 ? "/slider-prev.svg" : "/slider-next.svg")}
                 alt=""
                 aria-hidden="true"
               />
@@ -853,7 +871,7 @@ export default function Home() {
               onClick={() => setDirectionPage((page) => Math.min(directionMaxPage, page + 1))}
               type="button"
             >
-              <img src="/slider-next.svg" alt="" aria-hidden="true" />
+              <img src={assetPath("/slider-next.svg")} alt="" aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -897,9 +915,9 @@ export default function Home() {
                 ) : (
                   <>
                     <strong>{String(index + 1).padStart(2, "0")}</strong>
-                    <img className="card-icon" src={currentDirectionIcons[index]} alt="" aria-hidden="true" />
+                    <img className="card-icon" src={assetPath(currentDirectionIcons[index])} alt="" aria-hidden="true" />
                     <h3>{direction}</h3>
-                    <img className="arrow" src="/arrow-right-circle.svg" alt="" aria-hidden="true" />
+                    <img className="arrow" src={assetPath("/arrow-right-circle.svg")} alt="" aria-hidden="true" />
                   </>
                 )}
               </article>
@@ -925,13 +943,13 @@ export default function Home() {
         <div className="founder-grid">
           {currentFounderCards.map((founder, index) => (
             <article className="founder-card" key={`${language}-founder-${index}`}>
-              <img className="founder-icon" src={founder.icon} alt="" aria-hidden="true" />
+              <img className="founder-icon" src={assetPath(founder.icon)} alt="" aria-hidden="true" />
               <h3>{founder.title}</h3>
               <p className="country">{founder.country}</p>
               <p>{founder.text}</p>
               <a className="button secondary full" href="#contacts">
                 {copy.learnMore}
-                <img className="button-icon" src="/btn-arrow.svg" alt="" aria-hidden="true" />
+                <img className="button-icon" src={assetPath("/btn-arrow.svg")} alt="" aria-hidden="true" />
               </a>
             </article>
           ))}
@@ -968,7 +986,7 @@ export default function Home() {
             >
               <img
                 className={projectPage === 0 ? "" : "is-flipped"}
-                src={projectPage === 0 ? "/slider-prev.svg" : "/slider-next.svg"}
+                src={assetPath(projectPage === 0 ? "/slider-prev.svg" : "/slider-next.svg")}
                 alt=""
                 aria-hidden="true"
               />
@@ -980,7 +998,7 @@ export default function Home() {
               onClick={() => setProjectPage((page) => Math.min(projectMaxPage, page + 1))}
               type="button"
             >
-              <img src="/slider-next.svg" alt="" aria-hidden="true" />
+              <img src={assetPath("/slider-next.svg")} alt="" aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -1021,9 +1039,9 @@ export default function Home() {
                 ) : (
                   <>
                     <strong>{String(index + 1).padStart(2, "0")}</strong>
-                    <img className="project-card-icon" src={project.icon} alt="" aria-hidden="true" />
+                    <img className="project-card-icon" src={assetPath(project.icon)} alt="" aria-hidden="true" />
                     <h3>{project.title}</h3>
-                    <img className="arrow" src="/arrow-right-circle.svg" alt="" aria-hidden="true" />
+                    <img className="arrow" src={assetPath("/arrow-right-circle.svg")} alt="" aria-hidden="true" />
                   </>
                 )}
               </article>
@@ -1083,12 +1101,12 @@ export default function Home() {
             <h2>{copy.projects.rehabTitle}</h2>
           </div>
           <p>{copy.projects.rehabText}</p>
-          <img src="/rehab-building.png" alt={copy.projects.rehabTitle} decoding="async" loading="lazy" />
+          <img src={assetPath("/rehab-building.png")} alt={copy.projects.rehabTitle} decoding="async" loading="lazy" />
           <div className="rehab-services">
             <ul>
               {currentRehabServices.slice(0, 4).map((service) => (
                 <li key={service}>
-                  <img className="rehab-service-icon" src="/rehab-service-bullet.svg" alt="" aria-hidden="true" />
+                  <img className="rehab-service-icon" src={assetPath("/rehab-service-bullet.svg")} alt="" aria-hidden="true" />
                   <span>{service}</span>
                 </li>
               ))}
@@ -1096,7 +1114,7 @@ export default function Home() {
             <ul>
               {currentRehabServices.slice(4).map((service) => (
                 <li key={service}>
-                  <img className="rehab-service-icon" src="/rehab-service-bullet.svg" alt="" aria-hidden="true" />
+                  <img className="rehab-service-icon" src={assetPath("/rehab-service-bullet.svg")} alt="" aria-hidden="true" />
                   <span>{service}</span>
                 </li>
               ))}
@@ -1104,7 +1122,7 @@ export default function Home() {
             <a className="button primary rehab-support" href="#support">{copy.support}</a>
             <a className="button secondary rehab-join" href="#contacts">
               {copy.join}
-              <img className="button-icon" src="/btn-arrow.svg" alt="" aria-hidden="true" />
+              <img className="button-icon" src={assetPath("/btn-arrow.svg")} alt="" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -1119,7 +1137,7 @@ export default function Home() {
           <ul>
             {currentRehabServices.slice(0, 4).map((service) => (
               <li key={service}>
-                <img className="rehab-service-icon" src="/rehab-service-bullet.svg" alt="" aria-hidden="true" />
+                <img className="rehab-service-icon" src={assetPath("/rehab-service-bullet.svg")} alt="" aria-hidden="true" />
                 <span>{service}</span>
               </li>
             ))}
@@ -1127,7 +1145,7 @@ export default function Home() {
           <ul>
             {currentRehabServices.slice(4).map((service) => (
               <li key={service}>
-                <img className="rehab-service-icon" src="/rehab-service-bullet.svg" alt="" aria-hidden="true" />
+                <img className="rehab-service-icon" src={assetPath("/rehab-service-bullet.svg")} alt="" aria-hidden="true" />
                 <span>{service}</span>
               </li>
             ))}
@@ -1147,7 +1165,7 @@ export default function Home() {
             <article className="support-help-card" key={`${language}-help-${index}`}>
               <div className="support-help-glass">
                 <div className="support-help-content">
-                  <img className="support-help-icon" src={icon} alt="" aria-hidden="true" />
+                  <img className="support-help-icon" src={assetPath(icon)} alt="" aria-hidden="true" />
                   <div className="support-help-copy">
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -1166,14 +1184,14 @@ export default function Home() {
           <div className="contact-info-block">
             <h3>{copy.contacts.contactInfo}</h3>
             <a className="contact-link" href="mailto:pn.hum.alliance@gmail.com">
-              <img src="/contact-icons/email.svg" alt="" aria-hidden="true" />
+              <img src={assetPath("/contact-icons/email.svg")} alt="" aria-hidden="true" />
               <span>
                 <strong>Email</strong>
                 pn.hum.alliance@gmail.com
               </span>
             </a>
             <a className="contact-link" href="tel:+380988823888">
-              <img src="/contact-icons/phone.svg" alt="" aria-hidden="true" />
+              <img src={assetPath("/contact-icons/phone.svg")} alt="" aria-hidden="true" />
               <span>
                 <strong>{copy.contacts.phone}</strong>
                 +380 98 882 3888
@@ -1184,10 +1202,10 @@ export default function Home() {
             <h3>{copy.contacts.social}</h3>
             <div className="socials">
               <a href="#" aria-label="Facebook">
-                <img src="/contact-icons/facebook.svg" alt="" aria-hidden="true" />
+                <img src={assetPath("/contact-icons/facebook.svg")} alt="" aria-hidden="true" />
               </a>
               <a href="#" aria-label="LinkedIn">
-                <img src="/contact-icons/linkedin.svg" alt="" aria-hidden="true" />
+                <img src={assetPath("/contact-icons/linkedin.svg")} alt="" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -1224,7 +1242,7 @@ export default function Home() {
         <div className="footer-inner">
           <div className="footer-top">
             <a className="brand" href="#home" aria-label="Power of the Nation">
-              <img src="/footer-logo.png" alt="Power of the Nation Humanitarian Alliance" />
+              <img src={assetPath("/footer-logo.png")} alt="Power of the Nation Humanitarian Alliance" />
             </a>
             <nav aria-label={copy.aria.footerNav}>
               <a href="#home">{copy.nav.home}</a>
